@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: autopsy
+      POSTGRES_PASSWORD: autopsy
+      POSTGRES_DB: autopsy
+    ports:
+      - "5432:5432"
+    volumes:
+      - autopsy_pg:/var/lib/postgresql/data
+
+volumes:
+  autopsy_pg:
